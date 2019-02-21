@@ -1,10 +1,12 @@
 Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent { docker 'php' }
+    agent {
+        docker { image 'node:7-alpine' }
+    }
     stages {
-        stage('build') {
+        stage('Test') {
             steps {
-                sh 'php --version'
+                sh 'node --version'
             }
         }
     }
